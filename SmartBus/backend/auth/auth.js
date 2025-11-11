@@ -29,7 +29,7 @@ passport.use(
 passport.use(
   new JWTStrategy(
     {
-      secretOrKey: "top_secret", // use env variable in production
+      secretOrKey: process.env.JWT_SECRET,
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     },
     async (token, done) => {
