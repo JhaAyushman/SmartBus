@@ -52,52 +52,76 @@ export default class PaymentPage extends React.Component {
     this.setState({ [target.name]: target.value });
   };
 
- handleSubmit = async (e) => {
+  handleSubmit = async (e) => {
   e.preventDefault();
-  
-  try {
-    const contractAddress = '0xCBbb8c3043F82DE72a36Dd63D8734577068FB1A4';
-    const privateKey = '0xbeb070802c34f1dce627809916a089b4e719ae16891dc3ca20f536d6676682a5';
 
+  try {
     const summary = this.getBookingSummary();
-    
+
     if (!summary.seats || summary.seats.length === 0) {
       alert('Please select seats first');
       return;
     }
 
-    const provider = new ethers.providers.JsonRpcProvider('http://localhost:7545');
-    const wallet = new ethers.Wallet(privateKey, provider);
-    const contract = new ethers.Contract(contractAddress, BusTicketABI, wallet);
-
-    const busRoute = `${summary.from} - ${summary.to}`;
-    const seatNumbers = summary.seats.join(',');
+    // 🚫 Skip blockchain
+    // Simulate success
+    console.log('💳 Simulated payment success:', summary);
+    alert('✅ Payment successful (blockchain skipped for live server)');
     
-    // FIX: Send a small test amount (0.001 ETH)
-    const amountInWei = ethers.utils.parseEther('0.001');
-
-    console.log('Transaction details:', {
-      busRoute,
-      seatNumbers,
-      amount: '0.001 ETH',
-      priceInRupees: summary.total
-    });
-
-    const tx = await contract.purchaseTicket(busRoute, seatNumbers, {
-      value: amountInWei,
-    });
-
-    console.log('✅ Transaction sent:', tx.hash);
-    const receipt = await tx.wait();
-    console.log('✅ Transaction confirmed:', receipt);
-    
-    alert('✅ Ticket purchased on blockchain!');
+    // Redirect to ticket page
     this.props.history.push('/ticket');
   } catch (error) {
-    console.error('❌ Error:', error);
+    console.error('❌ Payment Error:', error);
     alert(`Error: ${error.message}`);
   }
 };
+
+//  handleSubmit = async (e) => {
+//   e.preventDefault();
+  
+//   try {
+//     const contractAddress = '0xCBbb8c3043F82DE72a36Dd63D8734577068FB1A4';
+//     const privateKey = '0xbeb070802c34f1dce627809916a089b4e719ae16891dc3ca20f536d6676682a5';
+
+//     const summary = this.getBookingSummary();
+    
+//     if (!summary.seats || summary.seats.length === 0) {
+//       alert('Please select seats first');
+//       return;
+//     }
+
+//     const provider = new ethers.providers.JsonRpcProvider('http://localhost:7545');
+//     const wallet = new ethers.Wallet(privateKey, provider);
+//     const contract = new ethers.Contract(contractAddress, BusTicketABI, wallet);
+
+//     const busRoute = `${summary.from} - ${summary.to}`;
+//     const seatNumbers = summary.seats.join(',');
+    
+//     // FIX: Send a small test amount (0.001 ETH)
+//     const amountInWei = ethers.utils.parseEther('0.001');
+
+//     console.log('Transaction details:', {
+//       busRoute,
+//       seatNumbers,
+//       amount: '0.001 ETH',
+//       priceInRupees: summary.total
+//     });
+
+//     const tx = await contract.purchaseTicket(busRoute, seatNumbers, {
+//       value: amountInWei,
+//     });
+
+//     console.log('✅ Transaction sent:', tx.hash);
+//     const receipt = await tx.wait();
+//     console.log('✅ Transaction confirmed:', receipt);
+    
+//     alert('✅ Ticket purchased on blockchain!');
+//     this.props.history.push('/ticket');
+//   } catch (error) {
+//     console.error('❌ Error:', error);
+//     alert(`Error: ${error.message}`);
+//   }
+// };
 
 
   getBookingSummary = () => {
