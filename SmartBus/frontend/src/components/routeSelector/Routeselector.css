@@ -1,0 +1,288 @@
+/* ========================================
+   ULTRA-MODERN BUS LIST - ALIGNED CARDS
+   ======================================== */
+
+.buslist-container {
+  margin-top: 2.5rem;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.buslist {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Bus Card with Glassmorphism */
+.bus-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient Border Effect */
+.bus-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  padding: 2px;
+  background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.bus-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 
+    0 20px 60px rgba(102, 126, 234, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.bus-card:hover::before {
+  opacity: 1;
+}
+
+.bus-card.selected {
+  background: rgba(102, 126, 234, 0.08);
+  border-color: #667eea;
+  box-shadow: 
+    0 12px 40px rgba(102, 126, 234, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.bus-card.selected::before {
+  opacity: 1;
+}
+
+/* Card Layout */
+.bus-info-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.bus-main-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bus-name-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.bus-name {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.bus-type {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.15);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Bus Details */
+.bus-details {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.bus-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.bus-detail-icon {
+  color: #667eea;
+  font-size: 1.2rem;
+  filter: drop-shadow(0 2px 4px rgba(102, 126, 234, 0.3));
+}
+
+/* Price Section */
+.bus-price-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.bus-price {
+  font-size: 2.2rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+.bus-price-label {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Select Button */
+.bus-action-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bus-select-button {
+  padding: 1rem 2.5rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 
+    0 4px 20px rgba(102, 126, 234, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bus-select-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #764ba2, #f093fb);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.bus-select-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 8px 30px rgba(102, 126, 234, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.bus-select-button:hover::before {
+  opacity: 1;
+}
+
+.bus-select-button span {
+  position: relative;
+  z-index: 1;
+}
+
+.bus-select-button:active {
+  transform: translateY(-1px);
+}
+
+/* Arrow Indicator */
+.activeArrow {
+  color: #10b981;
+  font-size: 2.5rem;
+  animation: bounceArrow 1s ease-in-out infinite;
+  filter: drop-shadow(0 4px 12px rgba(16, 185, 129, 0.4));
+}
+
+@keyframes bounceArrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.nonActive {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .bus-info-row {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .bus-price-section,
+  .bus-action-section {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .bus-card {
+    padding: 1.5rem;
+  }
+  
+  .bus-name {
+    font-size: 1.3rem;
+  }
+  
+  .bus-details {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .bus-select-button {
+    width: 100%;
+  }
+}
+

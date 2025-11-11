@@ -1,0 +1,304 @@
+/* Payment Page */
+.payment-page {
+  min-height: 100vh;
+  background: #0a0e27;
+}
+
+.payment-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.payment-container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 3rem;
+}
+
+/* Payment Form Section */
+.payment-form-section {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card-display {
+  margin-bottom: 2.5rem;
+  perspective: 1200px;
+}
+
+.card-display .rccs {
+  margin: 0 auto;
+}
+
+.card-display .rccs__card {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.form-group label {
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group label svg {
+  color: #667eea;
+}
+
+.form-group input {
+  padding: 1.1rem 1.4rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  border-radius: 12px;
+  color: white;
+  font-size: 1.05rem;
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+}
+
+.form-group input:focus {
+  border-color: #667eea;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+  transform: translateY(-2px);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.payment-submit-btn {
+  padding: 1.3rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.payment-submit-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5);
+}
+
+.security-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 12px;
+  color: #10b981;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Summary Section */
+.summary-section {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.summary-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.trip-details {
+  background: rgba(102, 126, 234, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+  border-bottom: 1px dashed rgba(102, 126, 234, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.detail-value {
+  font-weight: 700;
+  color: white;
+}
+
+.passengers-summary {
+  margin-bottom: 2rem;
+}
+
+.passengers-summary h3 {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.passenger-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.seat-badge {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.price-breakdown {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+.price-row.total {
+  border-top: 2px solid rgba(102, 126, 234, 0.3);
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+  color: white;
+  font-size: 1.3rem;
+}
+
+.price-row.total span:last-child {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+/* Custom Scrollbar */
+.summary-section::-webkit-scrollbar {
+  width: 6px;
+}
+
+.summary-section::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.summary-section::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 10px;
+}
+
+@media (max-width: 1024px) {
+  .payment-container {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-section {
+    max-height: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .payment-form-section,
+  .summary-section {
+    padding: 2rem;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

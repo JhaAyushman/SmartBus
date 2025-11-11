@@ -1,0 +1,20 @@
+{
+  "name": "mern-bus-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start:backend": "cd backend && node ./bin/www",
+    "start:frontend": "cd frontend && npm start",
+    "start:dev": "concurrently \"npm run start:backend\" \"npm run start:frontend\""
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-private-methods": "^7.18.6",
+    "concurrently": "^9.2.1"
+  },
+  "dependencies": {
+    "ethers": "^5.8.0",
+    "react-icons": "^5.5.0",
+    "react-transition-group": "^4.4.5"
+  }
+}

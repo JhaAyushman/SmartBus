@@ -1,0 +1,307 @@
+.booking-dashboard {
+  min-height: 100vh;
+  background: #0a0e27;
+}
+
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ========================================
+   TABS HEADER - PROGRESS STEPS
+   ======================================== */
+
+.tabs-header {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tab-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  flex: 1;
+}
+
+.tab-item.active {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+.tab-item.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.tab-item:not(.disabled):not(.active):hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.tab-icon {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.tab-item.active .tab-icon {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.tab-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.tab-number {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.tab-label {
+  font-size: 1rem;
+  color: white;
+  font-weight: 700;
+}
+
+.tab-connector {
+  width: 40px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ========================================
+   TAB CONTENT
+   ======================================== */
+
+.tab-content {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 500px;
+}
+
+.content-panel {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* ========================================
+   SEARCH FORM
+   ======================================== */
+
+.search-form-dashboard {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-group-dash {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.form-group-dash label {
+  color: white;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.form-group-dash label svg {
+  color: #667eea;
+}
+
+.form-group-dash input {
+  padding: 1.2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  border-radius: 12px;
+  color: white;
+  font-size: 1.05rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-group-dash input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.form-group-dash input:focus {
+  border-color: #667eea;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.btn-next {
+  padding: 1.3rem 2rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+  margin-top: 1rem;
+}
+
+.btn-next:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5);
+}
+
+/* ========================================
+   SUCCESS MESSAGE
+   ======================================== */
+
+.success-message {
+  text-align: center;
+  padding: 3rem;
+  color: white;
+}
+
+.success-message svg {
+  font-size: 5rem;
+  color: #10b981;
+  margin-bottom: 1rem;
+  animation: scaleIn 0.6s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.success-message h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.success-message p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .tabs-header {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .tab-info {
+    display: none;
+  }
+
+  .tab-item {
+    flex: 0 0 auto;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+
+  .tab-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .panel-title {
+    font-size: 1.5rem;
+  }
+}
+.form-group-dash select {
+  padding: 1.2rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  border-radius: 12px;
+  color: white;
+  font-size: 1.05rem;
+  outline: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.form-group-dash select option {
+  background: #1f2937;
+  color: white;
+  padding: 1rem;
+}
+
+.form-group-dash select:focus {
+  border-color: #667eea;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.form-group-dash select:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-group-dash select:disabled option {
+  color: #9ca3af;
+}
+

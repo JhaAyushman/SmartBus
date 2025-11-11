@@ -1,0 +1,45 @@
+/* ========================================
+   ULTRA-MODERN ROUTE SELECTION PAGE
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.route-selection-page {
+  min-height: 100vh;
+  background: #0a0e27;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animated Background */
+.route-selection-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(240, 147, 251, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Grid Pattern */
+.route-selection-page::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(102, 126, 234, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(102, 126, 234, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.route-selection-content {
+  position: relative;
+  z-index: 1;
+}
