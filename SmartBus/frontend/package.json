@@ -19,7 +19,7 @@
     "react-scripts": "^3.4.1",
     "react-transition-group": "^4.4.1",
     "redux": "^4.0.5",
-    "proxy": "https://smartbus-c52s.onrender.com"
+    "proxy": "https://smartbusbackend.onrender.com"
   },
   "scripts": {
     "start": "react-scripts start",
