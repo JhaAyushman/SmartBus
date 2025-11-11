@@ -11,7 +11,7 @@ import loginRoute from "./routes/login.js";
 import registerRoute from "./routes/register.js";
 import bookingRoute from "./routes/routeSelection.js";
 import loggedInPage from "./routes/loggedInUser.js";
-
+import { FRONTEND_URL } from "./config/keys.js";
 import { MongoURI } from "./config/keys.js";
 import "./auth/auth.js"; // Passport strategies
 
@@ -32,7 +32,7 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-const allowedOrigin = process.env.FRONTEND_URL;
+const allowedOrigin = FRONTEND_URL;
 app.use(
   cors({
     origin: allowedOrigin,
