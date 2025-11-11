@@ -3,6 +3,7 @@ import { Strategy as LocalStrategy } from "passport-local";
 import { Strategy as JWTStrategy, ExtractJwt } from "passport-jwt";
 import bcrypt from "bcryptjs";
 import User from "../models/User.js";
+import { JWT_SECRET } from "../config/keys.js";
 
 // ----------------- LOCAL STRATEGY -----------------
 passport.use(
@@ -29,7 +30,7 @@ passport.use(
 passport.use(
   new JWTStrategy(
     {
-      secretOrKey: process.env.JWT_SECRET,
+      secretOrKey: JWT_SECRET,
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
     },
     async (token, done) => {

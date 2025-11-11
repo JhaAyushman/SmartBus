@@ -5,7 +5,8 @@ import logger from "morgan";
 import mongoose from "mongoose";
 import passport from "passport";
 import cors from "cors";
-
+import dotenv from "dotenv";
+dotenv.config();
 import loginRoute from "./routes/login.js";
 import registerRoute from "./routes/register.js";
 import bookingRoute from "./routes/routeSelection.js";
