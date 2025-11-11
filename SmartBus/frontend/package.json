@@ -19,7 +19,7 @@
     "react-scripts": "^3.4.1",
     "react-transition-group": "^4.4.1",
     "redux": "^4.0.5",
-    "proxy": "https://smartbusbackend.onrender.com"
+    "proxy": "http://localhost:8080"
   },
   "scripts": {
     "start": "react-scripts start",
