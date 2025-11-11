@@ -47,7 +47,7 @@ export default function Signup() {
     setSuccess('');
 
     try {
-      const response = await axios.post('http://localhost:8080/user/register', {
+      const response = await axios.post('https://smartbusbackend.onrender.com/user/register', {
         name: newUser.name,
         email: newUser.email,
         password: newUser.password

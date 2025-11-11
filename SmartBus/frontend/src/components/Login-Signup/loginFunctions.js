@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const loginUser = async (loginCredentials) => {
-  const baseURL = "http://localhost:8080/user/login";
+  const baseURL = "https://smartbusbackend.onrender.com/user/login";
 
   try {
     const response = await axios.post(baseURL, loginCredentials);
